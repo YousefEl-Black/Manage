@@ -1,0 +1,12 @@
+.get-started-btn {
+  color: #fff;
+  background-color: $brightRed;
+  font-size: 10px;
+  font-weight: $fontS;
+  @include prefixer(box-shadow, 0px 10px 20px -10px $brightRed);
+  @include prefixer(transition, $transition);
+  &:hover {
+    color: #fff;
+    opacity: 0.5;
+  }
+}

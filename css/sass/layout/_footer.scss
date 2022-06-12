@@ -1,0 +1,88 @@
+footer {
+  background-color: $darkBlue;
+  min-height: 100px;
+  .container {
+    @include breakpoints(xs) {
+      grid-template-areas: "form form" "links-1 links-2" "social-media social-media" "logo logo" "copyright copyright";
+    }
+    @include breakpoints(md) {      
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "logo links-1 links-2 form" "social-media links-1 links-2 copyright";
+    }
+  }
+  .logo {
+    grid-area: logo;
+    img {
+      mix-blend-mode: exclusion;
+    }
+  }
+  .social-media {
+    grid-area: social-media;
+    li {
+      a {
+        i {
+          color: white;
+          transition: $transition;
+          font-size: 24px;
+        }
+        &:hover i {
+          color: $brightRed;
+        }
+      }
+    }
+  }
+  ul.links-1,
+  ul.links-2 {
+    li {
+      a {
+        text-decoration: none;
+        font-weight: $fontM;
+        color: $darkGrayishBlue;
+        transition: $transition;
+        &:hover {
+          color: $brightRed;
+        }
+      }
+    }
+  }
+  ul.links-1 {
+    grid-area: links-1;
+  }
+  ul.links-2 {
+    grid-area: links-2;
+  }
+  form.mail {
+    grid-area: form;
+    [type="text"] {
+      color: $brightRed;
+      padding: 5px 10px;
+      border: none;
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+    p {
+      font-size: 12px;
+      left: 10px;
+      display: none;
+      color: red;
+      @include breakpoints(xs) {
+        bottom: -70%;
+        transform: translateY(100%);
+      }
+      @include breakpoints(md) {
+        bottom: -20px;
+        transform: translateY(0);
+      }
+    }
+  }
+  .copyright {
+    grid-area: copyright;
+    color: $darkGrayishBlue;
+    span {
+      color: $brightRed;
+    }
+  }
+}

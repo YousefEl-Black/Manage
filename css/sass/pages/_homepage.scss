@@ -1,0 +1,133 @@
+body {
+  font-family: $font;
+  font-size: $fontSize;
+  background-image: url(../../../imgs/bg-tablet-pattern.svg), url(../../../imgs/bg-tablet-pattern.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% + 100px) -100px, left calc(50% + 150px);
+}
+
+.landing {
+  .container {
+    @include breakpoints(md) {
+      height: calc(100vh - 100px);
+    }
+    .text {
+      p {
+        color: $darkGrayishBlue;
+      }
+    }
+    .image {
+      @include breakpoints(xs) {
+        width: 100%;
+      }
+      @include breakpoints(md) {
+        width: auto;
+      }
+      img {
+        @include breakpoints(xs) {
+          width: 100%;
+        }
+        @include breakpoints(md) {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+.about {
+  .right-part {
+    text-align: center;
+    > p {
+      color: $darkGrayishBlue;
+      line-height: 2;
+    }
+  }
+  .left-part {
+    .part {
+      .title {
+        @include breakpoints(xs) {
+          background-color: hsl(12, 88%, 59%, 0.5);
+          border-radius: 25px 0 0 25px;
+        }
+        @include breakpoints(md) {
+          background-color: transparent;
+        }
+        .icon {
+          display: inline-block;
+          background-color: $brightRed;
+          color: #fff;
+          @include breakpoints(xs) {
+            padding: 10px 20px;
+          }
+          @include breakpoints(md) {
+            padding: 3px 10px;
+          }
+        }
+        h5 {
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .text {
+        p {
+          color: $darkGrayishBlue;
+          line-height: 2;
+        }
+      }
+    }
+  }
+}
+
+.testimonials {
+  overflow: hidden;
+  .title {
+    font-weight: $fontL;
+  }
+  .testimonials-container {
+    flex-wrap: nowrap;
+    .testimonial {
+      transition: transform 1s;
+      .avatar {
+        width: 50px;
+        height: 50px;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -25%);
+      }
+      .name {
+        background-color: $varyLightGray;
+        font-weight: $fontL;
+      }
+      .text {
+        background-color: $varyLightGray;
+        line-height: 2;
+        color: $darkGrayishBlue;
+      }
+    }
+  }
+  .btn-div {
+    width: 100%;
+  }
+}
+
+.team {
+  background-color: $brightRed;
+  background-repeat: no-repeat;
+  @include breakpoints(xs) {
+    background-image: url(../../../imgs/bg-simplify-section-mobile.svg);
+  }
+  @include breakpoints(md) {
+    background-image: url(../../../imgs/bg-simplify-section-desktop.svg);
+    background-position: center bottom;
+  }
+  .text {
+    color: white;
+  }
+  .btn-div {
+    .get-started-btn {
+      background-color: white;
+      color: $brightRed;
+    }
+  }
+}
