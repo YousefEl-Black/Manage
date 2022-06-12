@@ -69,8 +69,10 @@ let mailExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 let mailGo = document.querySelector("footer form [type='submit']");
 let mailInput = document.querySelector("footer form [type='text']");
 let mailAlert = document.querySelector("footer form p");
+mailGo.addEventListener("click", function(e){
+  e.preventDefault()
+});
 mailGo.onclick = () => {
-  console.log(mailInput.value.match(mailExp));
   if (mailInput.value.match(mailExp) == null) {
     mailAlert.style.display = "block";
   } else {
